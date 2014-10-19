@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script>
+    function buttonclick() {
+        $('#frmHome').submit();
+    }
+</script>
+<div class="jumbotron">
+    <h1>Blob</h1>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @encType = "multipart/form-data",id="frmHome" }))
+    {
+        <input type="file" name="file" />
+        <button onclick="buttonclick()" class="btn btn-block"></button>
+    }
+</div>
